@@ -18,4 +18,5 @@ app.err.log
 # Keep only JSON project files in demo_output
 demo_output/*
 !demo_output/*.json
+!demo_output/*.txt
 
