@@ -82,7 +82,10 @@ def _clip_region(r: Region, w: int, h: int) -> tuple[int, int, int, int]:
 
 def build_filter_complex(project: Project) -> tuple[str, str]:
     filters: list[str] = []
-    current = "0:v"
+    # Keep effect processing in RGB domain to match OpenCV preview and avoid
+    # chroma-subsampling edge artifacts (e.g. green lines) during region overlay.
+    filters.append("[0:v]format=rgb24[src]")
+    current = "src"
 
     for idx, region in enumerate(project.regions):
         x, y, rw, rh = _clip_region(region, project.video_width, project.video_height)
@@ -115,9 +118,7 @@ def build_filter_complex(project: Project) -> tuple[str, str]:
                 f"gblur=sigma={sigma:.2f},noise=alls={noise}:allf=t+u[{crop_tag}]"
             )
 
-        filters.append(
-            f"[{base_tag}][{crop_tag}]overlay={x}:{y}:enable='{enable}'[{out_tag}]"
-        )
+        filters.append(f"[{base_tag}][{crop_tag}]overlay={x}:{y}:format=rgb:enable='{enable}'[{out_tag}]")
         current = out_tag
 
     return ";".join(filters), current
