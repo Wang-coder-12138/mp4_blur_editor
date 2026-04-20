@@ -1,0 +1,57 @@
+{
+  "video_path": "D:\\Prosoft\\video_subtitle_remover\\mp4_blur_editor\\demo_output\\DemoVideo.mp4",
+  "video_width": 1280,
+  "video_height": 720,
+  "fps": 24.0,
+  "duration": 10.08,
+  "regions": [
+    {
+      "id": "7384dff3",
+      "name": "Region 1",
+      "x": 1046.4646464646464,
+      "y": 632.7272727272726,
+      "width": 217.3737373737374,
+      "height": 70.30303030303037,
+      "effect": "gaussian_blur",
+      "params": {
+        "blur_strength": 17.72,
+        "block_size": 20,
+        "glass_strength": 0.45
+      },
+      "start_time": 0.14,
+      "end_time": 3.76
+    },
+    {
+      "id": "67db65f4",
+      "name": "Region 2",
+      "x": 25.05050505050505,
+      "y": 35.55555555555556,
+      "width": 221.4141414141414,
+      "height": 58.18181818181817,
+      "effect": "mosaic",
+      "params": {
+        "blur_strength": 12.0,
+        "block_size": 15,
+        "glass_strength": 0.45
+      },
+      "start_time": 4.127,
+      "end_time": 7.822
+    },
+    {
+      "id": "7a1e3251",
+      "name": "Region 3",
+      "x": 1046.4646464646464,
+      "y": 630.3030303030303,
+      "width": 219.7979797979799,
+      "height": 72.72727272727275,
+      "effect": "frosted_glass",
+      "params": {
+        "blur_strength": 15.520000000000001,
+        "block_size": 20,
+        "glass_strength": 0.46
+      },
+      "start_time": 8.152,
+      "end_time": 10.08
+    }
+  ]
+}

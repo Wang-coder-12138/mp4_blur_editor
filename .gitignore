@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.venv/
+venv/
+
+app.pid
+app.out.log
+app.err.log
+
+# Local media and exports
+*.mp4
+*.mov
+*.avi
+
+# Keep only JSON project files in demo_output
+demo_output/*
+!demo_output/*.json
+
